@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Shell
+    x:Class="Books1.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Books1.Pages;assembly=Books1"
+    BackgroundColor="White">
+
+    <Shell.Resources>
+        <Style TargetType="TabBar">
+            <Setter Property="Shell.BackgroundColor" Value="White" />
+            <Setter Property="Shell.ForegroundColor" Value="Black" />
+            <Setter Property="Shell.TitleColor" Value="Black" />
+            <Setter Property="Shell.DisabledColor" Value="LightGray" />
+            <Setter Property="Shell.UnselectedColor" Value="DarkGray" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="DodgerBlue" />
+            <Setter Property="Shell.TabBarUnselectedColor" Value="Gray" />
+            <Setter Property="Shell.TabBarTitleColor" Value="DodgerBlue" />
+        </Style>
+    </Shell.Resources>
+
+    <ShellContent ContentTemplate="{DataTemplate pages:LoadingPage}" Route="loading" />
+
+    <ShellContent ContentTemplate="{DataTemplate pages:SearchPage}" Route="search" />
+
+</Shell>

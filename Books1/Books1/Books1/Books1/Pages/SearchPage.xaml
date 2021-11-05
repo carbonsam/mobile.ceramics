@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Books1.Pages.SearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Books1.Shared.Models;assembly=Books1.Shared"
+    xmlns:viewModels="clr-namespace:Books1.Shared.ViewModels;assembly=Books1.Shared"
+    Title="Book Search"
+    x:DataType="viewModels:BookRepositoryViewModel"
+    BackgroundColor="#eeeeee"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="92,*" RowSpacing="0">
+
+        <Frame
+            Grid.Row="0"
+            Margin="16"
+            Padding="0"
+            CornerRadius="8"
+            HasShadow="False">
+            <StackLayout Orientation="Horizontal" Spacing="16">
+                <Image
+                    Aspect="AspectFill"
+                    BackgroundColor="DodgerBlue"
+                    Source="{Binding AuthorImageSource}"
+                    WidthRequest="60" />
+                <StackLayout
+                    Padding="4"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="14"
+                        Text="Current Author"
+                        TextColor="DarkGray" />
+                    <Label
+                        FontSize="16"
+                        Text="{Binding CurrentAuthor.Name, TargetNullValue='None'}"
+                        TextColor="Black" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout
+            Grid.Row="1"
+            Margin="16,0"
+            Spacing="16">
+            <Frame
+                Padding="16"
+                CornerRadius="8"
+                HasShadow="False">
+                <StackLayout>
+                    <Label
+                        FontSize="24"
+                        Text="Book Search"
+                        TextColor="Black" />
+
+                    <Entry Placeholder="Author's Name (e.g. C. S. Lexis)" Text="{Binding AuthorSearchTerm}" />
+                    <Button Clicked="OnSearchButtonClicked" Text="Search">
+                        <Button.Triggers>
+                            <DataTrigger
+                                Binding="{Binding LoadingState}"
+                                TargetType="Button"
+                                Value="{x:Static models:BookRepositoryLoadingState.Busy}">
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                Padding="0"
+                CornerRadius="8"
+                HasShadow="False">
+                <ScrollView Padding="0,16">
+                    <StackLayout BindableLayout.ItemsSource="{Binding AuthorWorks}" Spacing="8">
+                        <BindableLayout.EmptyView>
+                            <Label
+                                Margin="16"
+                                FontSize="18"
+                                Text="No results"
+                                TextColor="Black" />
+                        </BindableLayout.EmptyView>
+
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:Work">
+                                <StackLayout Margin="16,0">
+                                    <Label
+                                        FontSize="16"
+                                        Text="{Binding Title}"
+                                        TextColor="Black" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+
+        <BoxView
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            IsVisible="False"
+            Opacity=".5"
+            Color="Gray">
+            <BoxView.Triggers>
+                <DataTrigger
+                    Binding="{Binding LoadingState}"
+                    TargetType="BoxView"
+                    Value="{x:Static models:BookRepositoryLoadingState.Busy}">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </BoxView.Triggers>
+        </BoxView>
+
+        <ActivityIndicator
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            HorizontalOptions="Center"
+            IsRunning="True"
+            IsVisible="False"
+            VerticalOptions="Center">
+            <ActivityIndicator.Triggers>
+                <DataTrigger
+                    Binding="{Binding LoadingState}"
+                    TargetType="ActivityIndicator"
+                    Value="{x:Static models:BookRepositoryLoadingState.Busy}">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </ActivityIndicator.Triggers>
+        </ActivityIndicator>
+    </Grid>
+</ContentPage>
