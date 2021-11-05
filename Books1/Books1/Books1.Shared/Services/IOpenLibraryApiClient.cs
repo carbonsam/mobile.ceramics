@@ -6,8 +6,8 @@ namespace Books1.Shared.Services
 {
     public interface IOpenLibraryApiClient
     {
-        Task<Author> FindAuthorAsync(string name);
+        public Task<Author> FindAuthorAsync(string name);
 
-        Task<IEnumerable<Work>> GetAuthorWorksAsync(string key);
+        public Task<IEnumerable<Work>> GetAuthorWorksAsync(Author author);
     }
 }

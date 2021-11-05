@@ -12,4 +12,19 @@
     <ItemGroup>
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Books1.Shared\Books1.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\LoadingPage.xaml.cs">
+        <DependentUpon>LoadingPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\SearchPage.xaml.cs">
+        <DependentUpon>SearchPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

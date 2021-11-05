@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
+using Microsoft.Extensions.DependencyInjection;
 using UIKit;
 
 namespace Books1.iOS
@@ -22,7 +23,10 @@ namespace Books1.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            var services = new ServiceCollection();
+
+            LoadApplication(new App(services));
 
             return base.FinishedLaunching(app, options);
         }

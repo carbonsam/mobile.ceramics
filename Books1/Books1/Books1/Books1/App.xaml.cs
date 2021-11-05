@@ -1,18 +1,19 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace Books1
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
+        public App(IServiceCollection serviceCollection)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            DependencyContainer.InitializeServices(serviceCollection);
+
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

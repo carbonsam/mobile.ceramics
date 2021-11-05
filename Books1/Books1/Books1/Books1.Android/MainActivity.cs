@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Books1.Android
 {
@@ -19,7 +20,10 @@ namespace Books1.Android
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            
+            var services = new ServiceCollection();
+
+            LoadApplication(new App(services));
         }
     }
 }
