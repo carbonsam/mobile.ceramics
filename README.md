@@ -13,7 +13,7 @@ Using the [Unsplash API](https://unsplash.com/developers), allow the user to sea
 Using the [Joke API](https://sv443.net/jokeapi/v2/), allow the user to find a random joke or set of jokes.
 
 ### Book Search App
-Using the [Open Library](https://openlibrary.org/developers/api), allow the user to search for an author and display their works as book covers.
+Using the [Open Library API](https://openlibrary.org/developers/api), allow the user to search for an author and display their works as book covers.
 
 ### Meal Finder App
 Using the [Meal API](https://www.themealdb.com/api.php), allow the user to search for meals by category.
