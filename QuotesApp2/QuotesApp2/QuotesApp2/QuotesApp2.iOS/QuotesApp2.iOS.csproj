@@ -5,12 +5,12 @@
         <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
         <ProductVersion>8.0.30703</ProductVersion>
         <SchemaVersion>2.0</SchemaVersion>
-        <ProjectGuid>{420058E2-38B6-4C70-BE90-04B5C036AB52}</ProjectGuid>
+        <ProjectGuid>{AC5E6D9E-7456-4CB7-BFF0-DD287B58181C}</ProjectGuid>
         <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Exe</OutputType>
-        <RootNamespace>Books1.iOS</RootNamespace>
+        <RootNamespace>QuotesApp2.iOS</RootNamespace>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-        <AssemblyName>Books1.iOS</AssemblyName>
+        <AssemblyName>QuotesApp2.iOS</AssemblyName>
         <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -106,13 +106,12 @@
         <Reference Include="Xamarin.iOS" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.CommunityToolkit" Version="1.3.0" />
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Books1\Books1.csproj">
-            <Project>{CFE4E505-7E23-4378-8999-050BAFB1670B}</Project>
-            <Name>Books1</Name>
+        <ProjectReference Include="..\QuotesApp2\QuotesApp2.csproj">
+            <Project>{015cb03f-9031-4e35-b43e-274d8d954fb0}</Project>
+            <Name>QuotesApp2</Name>
         </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
