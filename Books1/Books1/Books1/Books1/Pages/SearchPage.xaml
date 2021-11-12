@@ -4,9 +4,12 @@
     x:Class="Books1.Pages.SearchPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effects="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:models="clr-namespace:Books1.Shared.Models;assembly=Books1.Shared"
     xmlns:viewModels="clr-namespace:Books1.Shared.ViewModels;assembly=Books1.Shared"
     Title="Book Search"
+    iOsSpecific:Page.UseSafeArea="True"
     x:DataType="viewModels:BookRepositoryViewModel"
     BackgroundColor="#eeeeee"
     Shell.NavBarIsVisible="False">
@@ -17,8 +20,10 @@
             Grid.Row="0"
             Margin="16"
             Padding="0"
+            effects:SafeAreaEffect.SafeArea="false,true,false,false"
             CornerRadius="8"
-            HasShadow="False">
+            HasShadow="False"
+            IsClippedToBounds="True">
             <StackLayout Orientation="Horizontal" Spacing="16">
                 <Image
                     Aspect="AspectFill"

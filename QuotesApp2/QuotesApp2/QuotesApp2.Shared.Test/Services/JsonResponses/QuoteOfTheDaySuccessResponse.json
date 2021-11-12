@@ -1,0 +1,30 @@
+{
+  "success": {
+    "total": 1
+  },
+  "contents": {
+    "quotes": [
+      {
+        "quote": "It wasn't raining when Noah built the ark..",
+        "length": "45",
+        "author": "Howard Ruff",
+        "tags": [
+          "being-prepared",
+          "inspire"
+        ],
+        "category": "inspire",
+        "language": "en",
+        "date": "2021-11-12",
+        "permalink": "https://theysaidso.com/quote/howard-ruff-it-wasnt-raining-when-noah-built-the-ark",
+        "id": "bcYwS_RS1KCvfQ_ymsXk0AeF",
+        "background": "https://theysaidso.com/img/qod/qod-inspire.jpg",
+        "title": "Inspiring Quote of the day"
+      }
+    ]
+  },
+  "baseurl": "https://theysaidso.com",
+  "copyright": {
+    "year": 2023,
+    "url": "https://theysaidso.com"
+  }
+}
